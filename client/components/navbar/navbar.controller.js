@@ -5,6 +5,10 @@ angular.module('crbbiApp')
     $scope.menu = [{
       'title': 'Home',
       'link': '/'
+    },
+    {
+      title: 'Organizations',
+      link: '/organization'
     }];
 
     $scope.isCollapsed = true;
@@ -14,7 +18,7 @@ angular.module('crbbiApp')
 
     $scope.logout = function() {
       Auth.logout();
-      $location.path('/login');
+      $location.path('/');
     };
 
     $scope.isActive = function(route) {
