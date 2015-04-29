@@ -1,4 +1,605 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
-<div class="col-md-12">
-This is the organization view.
+
+<div class="container-fluid" data-spy="scroll" data-target="#myScrollspy">
+  <div class="row-fluid">
+    <div class="form-inline col-sm-3 nav-1" style="background-color:grey; height:40px">
+        <span class="pull-left fa fa-chevron-right fa-lg" style="display:inline-block; line-height:40px"></span>
+        <label class="label-lg" style="line-height:40px"> ОРГАНИЗАЦИИ</label>
+        <button class="btn btn-success pull-right fa fa-plus fa-lg form-control"></button>
+    </div>
+  </div>
+  <div class="row-fluid">
+    <div class="nav-2 col-sm-1">
+        <ul class="nav nav-pills nav-stacked">
+          <li role="presentation" class="active"><a href="#"><i class="fa fa-th-list"></i><br/>Общее</a></li>
+          <li role="presentation"><a href="#"><i class="fa fa-bar-chart"></i><br/>Статистика</a></li>
+          <li role="presentation"><a href="#"><i class="fa fa-cog"></i><br/>Настройки</a></li>
+        </ul>
+    </div>
+  </div>
+  <div class="row-fluid">
+    <div class="nav-3 col-sm-1" id="nav-3" data-spy="affix" data-offset-top="60" data-offset-bottom="200">
+        <ul class="nav nav-pills nav-stacked">
+          <li role="presentation" class="active"><a du-smooth-scroll du-scrollspy href="#social-networks">Home</a></li>
+          <li role="presentation"><a du-smooth-scroll du-scrollspy href="#about-you">Profile</a></li>
+          <li role="presentation"><a du-smooth-scroll du-scrollspy href="#credit-cards">Messages</a></li>
+        </ul>
+    </div>
+  </div>
+  <div class="row-fluid">
+    <div class="nav-3 col-sm-7">
+        <div id="social-networks" class="settings-section">
+            <div class="settings-head">
+            <div class="settings-head__title">Социальные сети</div>
+            </div>
+            <div class="settings-content">
+            <div class="settings_panel ClickTaleSensitive">
+            <div class="settings-item row" data-settings-item="social_networks">
+            <div class="settings-item__label">
+            <p class="settings_label">
+            Facebook
+            </p>
+            </div>
+            <div class="settings-item__content">
+            <p class="settings_user_data">
+            </p><div>Привяжите свой аккаунт к Facebook для более быстрого входа.</div>
+            <button class="b-button b-button_primary ua-facebook-dialog__button" data-command="facebook-connect">
+            <span class="b-button__text">Привязать аккаунт</span>
+            </button>
+            <p></p>
+            </div>
+            </div>
+            </div>
+            </div>
+        </div>
+
+        <div id="about-you" class="settings-section">
+            <div class="settings-head">
+            <div class="settings-head__title">О вас</div>
+            </div>
+            <div class="settings-content">
+            <div class="settings-content_public">
+            <div class="settings-content__title">Ваш профиль на Booking.com</div>
+            <div class="settings-content__subtitle">Эта информация появится рядом с вашими отзывами и поможет людям узнать вас получше. Если вы измените информацию о себе здесь, она также изменится на ваших предыдущих отзывах.</div>
+            <div class="settings-item row" data-settings-item="avatar">
+            <div class="settings-item__label">Изображение профиля</div>
+            <div class="settings-item__content ClickTaleSensitive">
+            <div class="settings-avatar">
+            <img class="avatar_img" src="https://q.bstatic.com/static/img/default_avatar_large_blue_onwhite/1691bc25cf76666b9c8cb15901f191e9f3963d7e.png" width="128">
+            </div>
+            <div class="settings-input row">
+            <div class="settings-input__input" style="width: auto;">
+            <button type="button" data-google-track="Click/mysettings/avatar_img" class="settings-control settings-control--button settings-control--inline" data-components="mysettings-avatar"><i class="settings-icon bicon-accamera"></i> Изменить фотографию</button>
+            </div>
+            <div class="settings-input__legend">
+            <div class="settings-input__legenditem"><i class="settings-icon bicon-icircle"></i> Ваша фотография — первое, что видят другие люди, поэтому выберите лучшую.</div>
+            </div>
+            </div>
+            </div>
+            </div>
+            <div class="settings-item row" data-components="mysettings-field" data-settings-item="nickname" data-custom-error-messages="true" data-error-message-is-taken="Введенное имя пользователя недоступно." data-error-message-not-alphanumeric="Имена пользователей должны содержать только латинские буквы, знаки нижнего подчеркивания и цифры.">
+            <div class="settings-item__label">
+            <label for="nickname">
+            Отображаемое имя
+            </label>
+            </div>
+            <div class="settings-item__content ClickTaleSensitive">
+            <div class="settings-input">
+            <div class="settings-input__input">
+            <input type="text" name="nickname" id="nickname" value="Noxcity" class="settings-control" maxlength="24">
+            </div>
+            <div class="settings-loader">
+            <i class="settings-loader__icon"></i>
+            <span class="settings-loader__saving">Сохраняем...</span>
+            <span class="settings-loader__saved">Сохранено</span>
+            </div>
+            <div class="settings-error" data-invalid-message=""></div>
+            <div class="settings-input__legend">
+            <div class="settings-input__legenditem"><i class="settings-icon bicon-icircle"></i> Вы можете менять свой псевдоним настолько часто, насколько хотите.</div>
+            </div>
+            </div>
+            </div>
+            </div>
+            <div class="settings-item row" data-settings-item="birthdate">
+            <div class="settings-item__label">
+            <label for="bday">
+            Возрастная группа
+            </label>
+            </div>
+            <div class="settings-item__content ClickTaleSensitive">
+            <div data-components="mysettings-toggle" data-model="mysettings-model-birthdate" data-button="mysettings_birthdate_button" data-detail="mysettings_birthdate_detail">
+            <div>
+
+            <div>
+
+            <button data-google-track="Click/mysettings/birthday_add" data-detail-trigger="" class="settings-control settings-control--button settings-control--inline"><i class="settings-icon bicon-acedit"></i> Добавить дату рождения</button>
+
+            </div>
+            </div>
+            </div>
+            <div class="settings-input__legend">
+            <div class="settings-input__legenditem"><i class="settings-icon bicon-icircle"></i> Если вы добавите дату своего рождения, мы покажем только вашу возрастную группу.</div>
+            </div>
+            </div>
+            </div>
+            <div class="settings-item row" data-components="mysettings-field" data-settings-item="nationality">
+            <div class="settings-item__label">
+            <label for="nationality">
+            Страна
+            </label>
+            </div>
+            <div class="settings-item__content ClickTaleSensitive">
+            <div class="settings-input">
+            <div class="settings-input__input">
+            <select class="settings-control" name="country_code">
+            <option></option>
+            <option value="xa">Абхазия</option>
+            <option value="au">Австралия</option>
+            <option value="at" selected="">Австрия</option>
+            <option value="az">Азербайджан</option>
+            <option value="al">Албания</option>
+            <option value="dz">Алжир</option>
+            <option value="vi">Американские Виргинские острова</option>
+            <option value="as">Американское Самоа</option>
+            <option value="ai">Ангилья</option>
+            <option value="ao">Ангола</option>
+            <option value="ad">Андорра</option>
+            <option value="aq">Антарктида</option>
+            <option value="ag">Антигуа и Барбуда</option>
+            <option value="ar">Аргентина</option>
+            <option value="am">Армения</option>
+            <option value="aw">Аруба</option>
+            <option value="af">Афганистан</option>
+            <option value="bs">Багамcкие острова</option>
+            <option value="bd">Бангладеш</option>
+            <option value="bb">Барбадос</option>
+            <option value="bh">Бахрейн</option>
+            <option value="by">Беларусь</option>
+            <option value="bz">Белиз</option>
+            <option value="be">Бельгия</option>
+            <option value="bj">Бенин</option>
+            <option value="bm">Бермудские острова</option>
+            <option value="bg">Болгария</option>
+            <option value="bo">Боливия</option>
+            <option value="bq">Бонэйр, Синт-Эстатиус и Саба</option>
+            <option value="ba">Босния и Герцеговина</option>
+            <option value="bw">Ботсвана</option>
+            <option value="br">Бразилия</option>
+            <option value="io">Британская Территория в Индийском &amp;hellip;</option>
+            <option value="vg">Британские Виргинские острова</option>
+            <option value="bn">Бруней</option>
+            <option value="bf">Буркина-Фасо</option>
+            <option value="bi">Бурунди</option>
+            <option value="bt">Бутан</option>
+            <option value="vu">Вануату</option>
+            <option value="va">Ватикан</option>
+            <option value="gb">Великобритания</option>
+            <option value="hu">Венгрия</option>
+            <option value="ve">Венесуэла</option>
+            <option value="um">Внешние малые острова США</option>
+            <option value="tl">Восточный Тимор</option>
+            <option value="vn">Вьетнам</option>
+            <option value="ga">Габон</option>
+            <option value="ht">Гаити</option>
+            <option value="gy">Гайана</option>
+            <option value="gm">Гамбия</option>
+            <option value="gh">Гана</option>
+            <option value="gp">Гваделупа</option>
+            <option value="gt">Гватемала</option>
+            <option value="gn">Гвинея</option>
+            <option value="gw">Гвинея-Бисау</option>
+            <option value="de">Германия</option>
+            <option value="gi">Гибралтар</option>
+            <option value="hn">Гондурас</option>
+            <option value="hk">Гонконг</option>
+            <option value="gd">Гренада</option>
+            <option value="gl">Гренландия</option>
+            <option value="gr">Греция</option>
+            <option value="ge">Грузия</option>
+            <option value="gu">Гуам</option>
+            <option value="dk">Дания</option>
+            <option value="cd">Демократическая Республика Конго</option>
+            <option value="dj">Джибути</option>
+            <option value="dm">Доминика</option>
+            <option value="do">Доминиканская Республика</option>
+            <option value="eg">Египет</option>
+            <option value="zm">Замбия</option>
+            <option value="zw">Зимбабве</option>
+            <option value="il">Израиль</option>
+            <option value="in">Индия</option>
+            <option value="id">Индонезия</option>
+            <option value="jo">Иордания</option>
+            <option value="iq">Ирак</option>
+            <option value="ir">Иран</option>
+            <option value="ie">Ирландия</option>
+            <option value="is">Исландия</option>
+            <option value="es">Испания</option>
+            <option value="it">Италия</option>
+            <option value="ye">Йемен</option>
+            <option value="cv">Кабо-Верде</option>
+            <option value="kz">Казахстан</option>
+            <option value="ky">Каймановы острова</option>
+            <option value="kh">Камбоджа</option>
+            <option value="cm">Камерун</option>
+            <option value="ca">Канада</option>
+            <option value="qa">Катар</option>
+            <option value="ke">Кения</option>
+            <option value="cy">Кипр</option>
+            <option value="kg">Киргизия</option>
+            <option value="ki">Кирибати</option>
+            <option value="cn">Китай</option>
+            <option value="cc">Кокосовые острова (острова Килинг)</option>
+            <option value="co">Колумбия</option>
+            <option value="km">Коморские острова</option>
+            <option value="cg">Конго</option>
+            <option value="xk">Косово</option>
+            <option value="cr">Коста-Рика</option>
+            <option value="ci">Кот-д'Ивуар</option>
+            <option value="xc">Крым</option>
+            <option value="cu">Куба</option>
+            <option value="kw">Кувейт</option>
+            <option value="cw">Кюрасао</option>
+            <option value="la">Лаос</option>
+            <option value="lv">Латвия</option>
+            <option value="ls">Лесото</option>
+            <option value="lr">Либерия</option>
+            <option value="lb">Ливан</option>
+            <option value="ly">Ливия</option>
+            <option value="lt">Литва</option>
+            <option value="li">Лихтенштейн</option>
+            <option value="lu">Люксембург</option>
+            <option value="mu">Маврикий</option>
+            <option value="mr">Мавритания</option>
+            <option value="mg">Мадагаскар</option>
+            <option value="yt">Майотта</option>
+            <option value="mo">Макао</option>
+            <option value="mk">Македония</option>
+            <option value="mw">Малави</option>
+            <option value="my">Малайзия</option>
+            <option value="ml">Мали</option>
+            <option value="mv">Мальдивы</option>
+            <option value="mt">Мальта</option>
+            <option value="ma">Марокко</option>
+            <option value="mq">Мартиника</option>
+            <option value="mh">Маршалловы острова</option>
+            <option value="mx">Мексика</option>
+            <option value="fm">Микронезия</option>
+            <option value="mz">Мозамбик</option>
+            <option value="md">Молдова</option>
+            <option value="mc">Монако</option>
+            <option value="mn">Монголия</option>
+            <option value="ms">Монтсеррат</option>
+            <option value="mm">Мьянма</option>
+            <option value="na">Намибия</option>
+            <option value="nr">Науру</option>
+            <option value="np">Непал</option>
+            <option value="ne">Нигер</option>
+            <option value="ng">Нигерия</option>
+            <option value="nl">Нидерланды</option>
+            <option value="ni">Никарагуа</option>
+            <option value="nu">Ниуэ</option>
+            <option value="nz">Новая Зеландия</option>
+            <option value="nc">Новая Каледония</option>
+            <option value="no">Норвегия</option>
+            <option value="ae">ОАЭ</option>
+            <option value="tz">Объединенная Республика Танзания</option>
+            <option value="om">Оман</option>
+            <option value="pk">Пакистан</option>
+            <option value="pw">Палау</option>
+            <option value="ps">Палестинская Территория</option>
+            <option value="pa">Панама</option>
+            <option value="pg">Папуа-Новая Гвинея</option>
+            <option value="py">Парагвай</option>
+            <option value="pe">Перу</option>
+            <option value="pl">Польша</option>
+            <option value="pt">Португалия</option>
+            <option value="pr">Пуэрто-Рико</option>
+            <option value="re">Реюньон</option>
+            <option value="ru">Россия</option>
+            <option value="rw">Руанда</option>
+            <option value="ro">Румыния</option>
+            <option value="us">США</option>
+            <option value="sv">Сальвадор</option>
+            <option value="ws">Самоа</option>
+            <option value="sm">Сан-Марино</option>
+            <option value="st">Сан-Томе и Принсипи</option>
+            <option value="sa">Саудовская Аравия</option>
+            <option value="sz">Свазиленд</option>
+            <option value="kp">Северная Корея</option>
+            <option value="mp">Северные Марианские острова</option>
+            <option value="sc">Сейшельские острова</option>
+            <option value="bl">Сен-Бартелеми</option>
+            <option value="mf">Сен-Мартен</option>
+            <option value="pm">Сен-Пьер и Микелон</option>
+            <option value="sn">Сенегал</option>
+            <option value="vc">Сент-Винсент и Гренадины</option>
+            <option value="kn">Сент-Киттс и Невис</option>
+            <option value="lc">Сент-Люсия</option>
+            <option value="rs">Сербия</option>
+            <option value="sg">Сингапур</option>
+            <option value="sx">Синт-Мартен</option>
+            <option value="sy">Сирийская Арабская Республика</option>
+            <option value="sk">Словакия</option>
+            <option value="si">Словения</option>
+            <option value="sb">Соломоновы острова</option>
+            <option value="so">Сомали</option>
+            <option value="sd">Судан</option>
+            <option value="sr">Суринам</option>
+            <option value="sl">Сьерра-Леоне</option>
+            <option value="tj">Таджикистан</option>
+            <option value="th">Таиланд</option>
+            <option value="tw">Тайвань</option>
+            <option value="tg">Того</option>
+            <option value="tk">Токелау</option>
+            <option value="to">Тонга</option>
+            <option value="tt">Тринидад и Тобаго</option>
+            <option value="tv">Тувалу</option>
+            <option value="tn">Тунис</option>
+            <option value="tm">Туркмения</option>
+            <option value="tr">Турция</option>
+            <option value="ug">Уганда</option>
+            <option value="uz">Узбекистан</option>
+            <option value="ua">Украина</option>
+            <option value="uy">Уругвай</option>
+            <option value="fo">Фарерские острова</option>
+            <option value="fj">Фиджи</option>
+            <option value="ph">Филиппины</option>
+            <option value="fi">Финляндия</option>
+            <option value="fk">Фолклендские острова</option>
+            <option value="fr">Франция</option>
+            <option value="gf">Французская Гвиана</option>
+            <option value="pf">Французская Полинезия</option>
+            <option value="tf">Французские Южные Территории</option>
+            <option value="hr">Хорватия</option>
+            <option value="cf">Центральноафриканская Республика</option>
+            <option value="td">Чад</option>
+            <option value="me">Черногория</option>
+            <option value="cz">Чехия</option>
+            <option value="cl">Чили</option>
+            <option value="ch">Швейцария</option>
+            <option value="se">Швеция</option>
+            <option value="lk">Шри-Ланка</option>
+            <option value="ec">Эквадор</option>
+            <option value="gq">Экваториальная Гвинея</option>
+            <option value="er">Эритрея</option>
+            <option value="ee">Эстония</option>
+            <option value="et">Эфиопия</option>
+            <option value="gs">Южная Георгия и Южные Сандвичевы о&amp;hellip;</option>
+            <option value="kr">Южная Корея</option>
+            <option value="za">Южно-Африканская Республика</option>
+            <option value="jm">Ямайка</option>
+            <option value="jp">Япония</option>
+            <option value="tc">о-ва Теркс и Кайкос</option>
+            <option value="hm">о-ва Херд и Макдональд</option>
+            <option value="sj">о-ва Шпицберген и Ян-Майен</option>
+            <option value="bv">остров Буве</option>
+            <option value="gg">остров Гернси</option>
+            <option value="je">остров Джерси</option>
+            <option value="im">остров Мэн</option>
+            <option value="nf">остров Норфолк</option>
+            <option value="cx">остров Рождества</option>
+            <option value="sh">остров Святой Елены</option>
+            <option value="ck">острова Кука</option>
+            <option value="pn">острова Питкэрн</option>
+            <option value="wf">острова Уоллис и Футуна</option>
+            </select>
+            </div>
+            <div class="settings-loader">
+            <i class="settings-loader__icon"></i>
+            <span class="settings-loader__saving">Сохраняем...</span>
+            <span class="settings-loader__saved">Сохранено</span>
+            </div>
+            <div class="settings-error" data-invalid-message=""></div>
+            <div class="settings-input__legend">
+            <div class="settings-input__legenditem"><i class="settings-icon bicon-icircle"></i> Людям интересно узнать, откуда вы.</div>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            <div class="settings-content_private">
+            <div class="settings-content__title">Для бронирования</div>
+            <div class="settings-content__subtitle">Эта информация используется только для автозаполнения ваших данных и помогает вам совершить бронирование быстрее. К ней не будет публичного доступа.</div>
+            <div class="settings-item row" data-components="form-validation mysettings-field" data-settings-item="user_title">
+            <div class="settings-item__label"><label for="user_title">Обращение</label></div>
+            <div class="settings-item__content ClickTaleSensitive">
+            <div class="settings-input">
+            <div class="settings-input__input">
+            <select name="user_title" id="user_title" class="settings-control">
+            <option value="mr">Г-н.</option>
+            <option value="ms">Г-жа</option>
+            </select>
+            </div>
+            <div class="settings-loader">
+            <i class="settings-loader__icon"></i>
+            <span class="settings-loader__saving">Сохраняем...</span>
+            <span class="settings-loader__saved">Сохранено</span>
+            </div>
+            <div class="settings-error" data-invalid-message=""></div>
+            </div>
+            </div>
+            </div>
+            <div class="settings-item row" data-components="form-validation mysettings-field" data-settings-item="first_name">
+            <div class="settings-item__label"><label for="firstname">Имя</label></div>
+            <div class="settings-item__content ClickTaleSensitive">
+            <div class="settings-input">
+            <div class="settings-input__input">
+            <input type="text" name="firstname" id="firstname" value="Сэр" class="settings-control" maxlength="45">
+            </div>
+            <div class="settings-loader">
+            <i class="settings-loader__icon"></i>
+            <span class="settings-loader__saving">Сохраняем...</span>
+            <span class="settings-loader__saved">Сохранено</span>
+            </div>
+            <div class="settings-error" data-invalid-message=""></div>
+            </div>
+            </div>
+            </div>
+            <div class="settings-item row" data-components="form-validation mysettings-field" data-settings-item="last_name">
+            <div class="settings-item__label"><label for="lastname">Фамилия</label></div>
+            <div class="settings-item__content ClickTaleSensitive">
+            <div class="settings-input">
+            <div class="settings-input__input">
+            <input type="text" name="lastname" id="lastname" value="Джон" class="settings-control" maxlength="45">
+            </div>
+            <div class="settings-loader">
+            <i class="settings-loader__icon"></i>
+            <span class="settings-loader__saving">Сохраняем...</span>
+            <span class="settings-loader__saved">Сохранено</span>
+            </div>
+            <div class="settings-error" data-invalid-message=""></div>
+            </div>
+            </div>
+            </div>
+            <div class="settings-item row" data-components="form-validation mysettings-field" data-settings-item="gender">
+            <div class="settings-item__label"><label for="gender">Пол</label></div>
+            <div class="settings-item__content ClickTaleSensitive">
+            <div class="settings-input">
+            <div class="settings-input__input">
+            <select name="gender" id="gender" class="settings-control">
+            <option value="male">
+            Мужской
+            </option>
+            <option value="female">
+            Женский
+            </option>
+            <option value="" selected="">
+            Предпочитаю не указывать
+            </option>
+            </select>
+            </div>
+            <div class="settings-loader">
+            <i class="settings-loader__icon"></i>
+            <span class="settings-loader__saving">Сохраняем...</span>
+            <span class="settings-loader__saved">Сохранено</span>
+            </div>
+            <div class="settings-error" data-invalid-message=""></div>
+            </div>
+            </div>
+            </div>
+            <div class="settings-item row" data-settings-item="emails">
+            <div class="settings-item__label">Электронный адрес(-а)</div>
+            <div class="settings-item__content ClickTaleSensitive">
+            <div class="settings-item__legend">Максимальное количество сохраняемых адресов - 3.</div>
+            <div class="settings-table" data-component="mysettings-list" data-model="mysettings-model-emails" data-row="mysettings_emails_row" data-detail="mysettings_emails_detail">
+            <div class="settings-table__body" data-body=""><div data-google-track="Click/mysettings/email_edit" class="row-fluid settings-table__row settings-table__row--primary" data-component="tooltip" data-detail-trigger="">
+            <div class="span11">
+            <i class="settings-icon settings-icon--smaller settings-t-grayed bicon-mail"></i>
+            monsterxxx@yandex.ru
+
+
+            <span class="settings-label settings-label--primary jq_tooltip" title="На этот адрес будут отправляться подтверждения бронирований" data-width="400">Основной</span>
+
+
+
+            </div>
+            <div class="span1 settings-t-right settings-table__edit jq_tooltip" title="Редактировать"><i class="settings-icon bicon-acedit"></i></div>
+            </div></div>
+            </div>
+            <div class="row-fluid">
+            <div data-component="mysettings-toggle" data-model="mysettings-model-emails" data-button="mysettings_emails_button" data-detail="mysettings_emails_detail">
+            <div data-component="tooltip">
+
+            <button data-google-track="Click/mysettings/email_add" data-detail-trigger="" class="settings-control settings-control--button settings-control--inline settings-control--padded"><i class="settings-icon bicon-plus"></i> Добавить электронный адрес</button>
+
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            <div class="settings-item row" data-settings-item="address">
+            <div class="settings-item__label">Адрес(-а)</div>
+            <div class="settings-item__content">
+            <div class="row-fluid">
+            <div class="span6">
+            <div class="settings-address ClickTaleSensitive">
+            <div class="settings-address-heading">
+            <span class="settings-address-heading__i">Адрес</span>
+            </div>
+            <div data-components="mysettings-toggle" data-model="mysettings-model-address-personal" data-button="mysettings_address_button" data-detail="mysettings_address_detail">
+
+            <div class="settings-address__content">
+            <div class="settings-address__data">
+
+
+
+
+
+
+            </div>
+            <button data-google-track="Click/mysettings/address_change_other" class="settings-control settings-control--button settings-control--inline settings-control--padded" data-detail-trigger="">
+            <i class="settings-icon bicon-acedit"></i>
+
+            Изменить домашний адрес
+
+            </button>
+            </div>
+            </div>
+            </div>
+            </div>
+            <div class="span6">
+            <div class="settings-address ClickTaleSensitive">
+            <div class="settings-address-heading--business settings-address-heading">
+            <span class="settings-address-heading__i">Адрес компании</span>
+            </div>
+            <div data-components="mysettings-toggle" data-model="mysettings-model-address-business" data-button="mysettings_address_button" data-detail="mysettings_address_detail">
+
+
+
+
+
+
+
+            <div class="settings-address__content">
+            <div class="settings-address__data">
+
+
+
+
+
+
+            </div>
+            <button data-google-track="Click/mysettings/address_change_biz" class="settings-control settings-control--button settings-control--inline settings-control--padded" data-detail-trigger="">
+            <i class="settings-icon bicon-acedit"></i>
+
+            Изменить адрес компании
+
+            </button>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+        </div>
+
+        <div id="credit-cards" class="settings-section">
+          <div class="settings-head">
+          <div class="settings-head__title">Сохраненные кредитные карты</div>
+          <div class="settings-head__subheading"><i class="settings-icon bicon-closedlock"></i> Ваши платежные данные надежно хранятся</div>
+          </div>
+          <div class="settings-content">
+          <div class="settings-item settings-table" data-settings-item="credit_cards">
+          <div class="row-fluid settings-table__heading">
+          <div class="span4">Номер кредитной карты</div>
+          <div class="span4">Имя владельца карты</div>
+          <div class="span3">Дата окончания действия</div>
+          </div>
+          <div class="settings-table__body" data-components="mysettings-list" data-model="mysettings-model-cards" data-row="mysettings_cards_row" data-detail="mysettings_cards_detail">
+          <div data-body=""></div>
+          </div>
+          <div data-components="mysettings-toggle" data-model="mysettings-model-cards" data-button="mysettings_cards_button" data-detail="mysettings_cards_detail">
+          <div class="row-fluid">
+          <button data-google-track="Click/mysettings/cc_add" class="settings-control settings-control--button settings-control--inline settings-control--padded" data-detail-trigger=""><i class="settings-icon bicon-plus"></i> Добавить карту</button>
+          </div>
+          </div>
+          </div>
+          </div>
+        </div>
+
+    </div>
+  </div>
 </div>

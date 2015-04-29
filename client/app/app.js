@@ -1,6 +1,7 @@
 'use strict';
 
 angular.module('crbbiApp', [
+  'duScroll',
   'ngCookies',
   'ngResource',
   'ngSanitize',

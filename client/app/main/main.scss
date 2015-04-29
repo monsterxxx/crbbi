@@ -28,3 +28,17 @@
     margin-top: 70px;
     border-top: 1px solid #E5E5E5;
 }
+.affix {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+#con .well {
+    height:400px;
+}
+
+#nav.affix {
+    position: fixed;
+    top: 0;
+    width: 100%
+}
